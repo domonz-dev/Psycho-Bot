@@ -1,1 +1,1 @@
-worker: python infrno.py
+worker: python inferno.py
