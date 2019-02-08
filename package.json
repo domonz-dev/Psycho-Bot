@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "inferno.py",
   "scripts": {
-    "start": "node bot.js"
+    "start": "node inferno.py"
   },
   "dependencies": {
     "discord.js": "11.1.0",
