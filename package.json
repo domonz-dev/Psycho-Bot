@@ -1,11 +1,12 @@
-{
-  "name": "[G-W] official",
-  "version": "1.0.0",
-  "description": "Gaming World Official Discord Bot",
+  "name": "Test",
+  "description": "Test",
+  "version": "0.0.0",
   "main": "bot.js",
-  "author": "Mr.Kumar",
+  "scripts": {
+    "start": "node bot.js"
+  },
   "dependencies": {
-    "discord.io": "https://github.com/woor/discord.io/tarball/gateway_v6",
-    "winston": "^3.2.1"
+    "discord.js": "11.1.0",
+    "request": "2.81.0"
   }
 }
