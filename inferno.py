@@ -962,7 +962,7 @@ async def remind(ctx, time=None, *,remind=None):
 
 @client.command(pass_context=True)
 async def ownerinfo(ctx):
-    embed = discord.Embed(title="Information about owner", description="Main Creator: Mr. ๖ۣۜζ͜͡Kumar#0843 ", color=0x00ff00)
+    embed = discord.Embed(title="Information about owner", description="Bot code Editor: Mr. ๖ۣۜζ͜͡Kumar#0843 ", color=0x00ff00)
     embed.set_author(name=" Bot Owner ""Mr. ๖ۣۜζ͜͡Kumar#0843 ")
     embed.add_field(name="Coder: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
     await client.say(embed=embed)
