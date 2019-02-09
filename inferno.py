@@ -23,10 +23,6 @@ async def status_task():
     while True:
         await client.change_presence(game=discord.Game(name='for t!help', type=2))
         await asyncio.sleep(20)
-        await client.change_presence(game=discord.Game(name='for t!help2', type=2))
-        await asyncio.sleep(20)
-        await client.change_presence(game=discord.Game(name='for t!help3', type=2))
-        await asyncio.sleep(20)
         await client.change_presence(game=discord.Game(name=str(len(set(client.get_all_members())))+' users', type=3))
         await asyncio.sleep(20)
         await client.change_presence(game=discord.Game(name=str(len(client.servers))+' servers', type=3))
@@ -59,7 +55,7 @@ async def on_member_join(member):
     embed.set_image(url = 'https://media.giphy.com/media/OkJat1YNdoD3W/giphy.gif')
     await client.send_message(member,embed=embed)
     for channel in member.server.channels:
-        if channel.name == 'server-welcome':
+        if channel.name == 'welcome':
             embed = discord.Embed(title=f'Welcome {member.name} to {member.server.name}', description='plz check server rules and get them into your mind to follow them.', color = 0x36393E)
             embed.add_field(name='__Thanks for joining__', value='**Be avtive and chat for rank up.**', inline=True)
             embed.set_thumbnail(url='https://media.giphy.com/media/8PyTvI5EOu9LbAm8uS/giphy.gif')
@@ -85,7 +81,7 @@ async def ping(ctx):
 async def jointest(ctx):
     member = ctx.message.author
     for channel in member.server.channels:
-        if channel.name == 'server-welcome':
+        if channel.name == 'welcome':
             embed = discord.Embed(title=f'Welcome {member.name} to {member.server.name}', description='plz check server rules and get them into your mind to follow them.', color = 0x36393E)
             embed.add_field(name='__Thanks for joining__', value='**Be active and chat for rank up.**', inline=True)
             embed.set_thumbnail(url='https://media.giphy.com/media/8PyTvI5EOu9LbAm8uS/giphy.gif')
