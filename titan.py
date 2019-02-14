@@ -841,17 +841,6 @@ async def hug(ctx, user: discord.Member):
         embed = discord.Embed(title=f"{user.name} You just got a hug from {ctx.message.author.name}", color = discord.Color((r << 16) + (g << 8) + b))
         embed.set_image(url=random.choice(randomurl))
         await client.say(embed=embed)
-        
-@client.command(pass_context=True)
-async def loveyou(ctx, user: discord.Member):
-    r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-    if user.id == ctx.message.author.id:
-        await client.say("{} Wanted to Love himself/herself you need to find a girl/boy for do this..".format(user.mention))
-    else:
-        randomurl = ["https://media.giphy.com/media/bMLGNRoAy0Yko/giphy.gif", "https://media.giphy.com/media/uigXewBzyy14k/giphy.gif", "https://media.giphy.com/media/rouJAK6zw2qmQ/giphy.gif"]
-        embed = discord.Embed(title=f"{user.name} You just got a hug from {ctx.message.author.name}", color = discord.Color((r << 16) + (g << 8) + b))
-        embed.set_image(url=random.choice(randomurl))
-        await client.say(embed=embed)
 
 @client.command(pass_context=True)
 async def joke(ctx):
@@ -1040,7 +1029,6 @@ async def help2(ctx):
     embed.add_field(name = 'rps', value ='play rock paper scissors',inline = False)
     embed.add_field(name = 'kick', value ='kick a user',inline = False)
     embed.add_field(name = 'kiss', value ='kiss someone',inline = False)
-    embed.add_field(name = 'loveyou', value ='say I love you someone',inline = False)
     embed.add_field(name = 'hug', value ='hug someone',inline = False)
     embed.add_field(name = 'joke', value ='hear jokes from the bot',inline = False)
     embed.add_field(name = 'rolldice', value ='roll a dice',inline = False)
