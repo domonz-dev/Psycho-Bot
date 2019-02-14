@@ -726,10 +726,10 @@ async def slap(ctx, user: discord.Member = None):
         await client.say(embed=embed)
 
 @client.command(pass_context=True)
-async def damn(ctx):
+async def joinus(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-    embed = discord.Embed(title="DAMNNNNNNNN!!", color = discord.Color((r << 16) + (g << 8) + b))
-    embed.set_image(url="http://i.imgur.com/OKMogWM.gif")
+    embed = discord.Embed(title="Join our community --!!", color = discord.Color((r << 16) + (g << 8) + b))
+    embed.set_image(url="https://media.giphy.com/media/l41YouCUUcreUabHW/giphy.gif")
     await client.say(embed=embed)
     await client.delete_message(ctx.message)
 
@@ -1006,7 +1006,7 @@ async def help2(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help2')
-    embed.set_image(url = 'https://image.ibb.co/caM2BK/help.gif')    
+    embed.set_image(url = '')    
     embed.add_field(name = 'access', value ='acces a member',inline = False)
     embed.add_field(name = 'setpartner', value ='setup partner',inline = False)
     embed.add_field(name = 'partner', value ='partner',inline = False)
@@ -1021,7 +1021,7 @@ async def help2(ctx):
     embed.add_field(name = 'membercount', value ='check how many members,users and bots you have',inline = False)
     embed.add_field(name = 'happybday', value ='say happy birthday to someone',inline = False)
     embed.add_field(name = 'slap', value ='slap someone',inline = False)
-    embed.add_field(name = 'damn', value ='gif command',inline = False)
+    embed.add_field(name = 'joinus', value ='gif command',inline = False)
     embed.add_field(name = 'burned', value ='gif command',inline = False)
     embed.add_field(name = 'savage', value ='gif command',inline = False)
     embed.add_field(name = 'thuglife', value ='gif command',inline = False)
