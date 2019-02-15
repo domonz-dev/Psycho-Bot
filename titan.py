@@ -100,7 +100,7 @@ async def servers(ctx):
 
 
 @client.command(pass_context = True)
-async def lock(ctx, channelname: discord.Channel=None):
+async def lockchannel(ctx, channelname: discord.Channel=None):
     overwrite = discord.PermissionOverwrite(send_messages=False, read_messages=True)
     if not channelname:
         role = discord.utils.get(ctx.message.server.roles, name='@everyone')
@@ -115,7 +115,7 @@ async def lock(ctx, channelname: discord.Channel=None):
             await client.edit_channel_permissions(channelname, role, overwrite)
             await client.say("Channel locked by: {}".format(ctx.message.author))
 @client.command(pass_context = True)
-async def unlock(ctx, channelname: discord.Channel=None):
+async def unlockchannel(ctx, channelname: discord.Channel=None):
     overwrite = discord.PermissionOverwrite(send_messages=None, read_messages=True)
     if not channelname:
         if ctx.message.author.server_permissions.kick_members == False:
@@ -135,7 +135,7 @@ async def unlock(ctx, channelname: discord.Channel=None):
             await client.say("Channel unlocked by: {}".format(ctx.message.author))
 
 @client.command(pass_context = True)
-async def dm(ctx, user: discord.Member, *, msg: str):
+async def dm to(ctx, user: discord.Member, *, msg: str):
    if user is None or msg is None:
        await client.say('Invalid args. Use this command like: ``t!dm @user message``')
    if ctx.message.author.server_permissions.kick_members == False:
@@ -159,7 +159,7 @@ async def setw(ctx):
       await client.create_channel(server, 'server-welcome',everyone)
 
 @client.command(pass_context = True)
-async def setuplog(ctx):
+async def setuplogchannel(ctx):
     if ctx.message.author.bot:
       return
     if ctx.message.author.server_permissions.administrator == False:
@@ -173,7 +173,7 @@ async def setuplog(ctx):
       await client.create_channel(server, 'server-log',everyone)
 
 @client.command(pass_context=True)
-async def getuser(ctx, role: discord.Role = None):
+async def userrole(ctx, role: discord.Role = None):
     if role is None:
         await client.say('Please tag a role to get users having it. Example- `t!getuser @role``')
         return
@@ -371,7 +371,7 @@ async def announce(ctx, channel: discord.Channel=None, *, msg: str=None):
             return
         else:
             r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
-            embed=discord.Embed(title="Announcement", description="{}".format(msg), color = discord.Color((r << 16) + (g << 8) + b))
+            embed=discord.Embed(title="Information", description="{}".format(msg), color = discord.Color((r << 16) + (g << 8) + b))
             await client.send_message(channel, embed=embed)
             await client.delete_message(ctx.message)
 
@@ -973,7 +973,7 @@ async def help(ctx):
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
     embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')
-    embed.add_field(name = 't!ping', value ='ping is a common command of bots',inline = False)
+    embed.add_field(name = 'Information', value =' `ping` `userrole` `userinfo` `roleinfo` `rolecolor` ',inline = False)
     embed.add_field(name = 't!jointest ',value ='Test the bot as welcomer',inline = False)
     embed.add_field(name = 't!servers ',value ='command for only the devs of the bot',inline = False)
     embed.add_field(name = 't!lock',value ='lock any channels',inline = False)
@@ -981,7 +981,7 @@ async def help(ctx):
     embed.add_field(name = 't!dm',value ='Dm any member but you need to have administator power',inline = False)
     embed.add_field(name = 't!setw',value ='setup bot as welcomer',inline = False)
     embed.add_field(name = 't!setuplog',value ='setup log channel',inline = False)
-    embed.add_field(name = 't!getuser',value ='check which role a user has',inline = False)
+    embed.add_field(name = 't!userrole',value ='check which role a user has',inline = False)
     embed.add_field(name = 't!userinfo',value ='info of a user',inline = False)
     embed.add_field(name = 't!roleinfo',value ='info of a role',inline = False)
     embed.add_field(name = 't!rolecolor',value ='change a roles color',inline = False)
