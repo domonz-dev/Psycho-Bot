@@ -100,7 +100,7 @@ async def servers(ctx):
 
 
 @client.command(pass_context = True)
-async def lockchannel(ctx, channelname: discord.Channel=None):
+async def lock(ctx, channelname: discord.Channel=None):
     overwrite = discord.PermissionOverwrite(send_messages=False, read_messages=True)
     if not channelname:
         role = discord.utils.get(ctx.message.server.roles, name='@everyone')
@@ -115,7 +115,7 @@ async def lockchannel(ctx, channelname: discord.Channel=None):
             await client.edit_channel_permissions(channelname, role, overwrite)
             await client.say("Channel locked by: {}".format(ctx.message.author))
 @client.command(pass_context = True)
-async def unlockchannel(ctx, channelname: discord.Channel=None):
+async def unlock(ctx, channelname: discord.Channel=None):
     overwrite = discord.PermissionOverwrite(send_messages=None, read_messages=True)
     if not channelname:
         if ctx.message.author.server_permissions.kick_members == False:
@@ -135,7 +135,7 @@ async def unlockchannel(ctx, channelname: discord.Channel=None):
             await client.say("Channel unlocked by: {}".format(ctx.message.author))
 
 @client.command(pass_context = True)
-async def dm to(ctx, user: discord.Member, *, msg: str):
+async def dm(ctx, user: discord.Member, *, msg: str):
    if user is None or msg is None:
        await client.say('Invalid args. Use this command like: ``t!dm @user message``')
    if ctx.message.author.server_permissions.kick_members == False:
@@ -159,7 +159,7 @@ async def setw(ctx):
       await client.create_channel(server, 'server-welcome',everyone)
 
 @client.command(pass_context = True)
-async def setuplogchannel(ctx):
+async def setuplog(ctx):
     if ctx.message.author.bot:
       return
     if ctx.message.author.server_permissions.administrator == False:
@@ -973,7 +973,7 @@ async def help(ctx):
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
     embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')
-    embed.add_field(name = 'Information', value =' `ping` `userrole` `userinfo` `roleinfo` `rolecolor` ',inline = False)
+    embed.add_field(name = 't!ping', value =' `pong',inline = False)
     embed.add_field(name = 't!jointest ',value ='Test the bot as welcomer',inline = False)
     embed.add_field(name = 't!servers ',value ='command for only the devs of the bot',inline = False)
     embed.add_field(name = 't!lock',value ='lock any channels',inline = False)
