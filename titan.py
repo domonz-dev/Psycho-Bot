@@ -1008,7 +1008,7 @@ async def help2(ctx):
     embed.set_author(name='Titan bot commands')
     embed.add_field(name = '`access`,`setpartner`,`partner`,`addrole`,`delrole`\n `setnick`,`purge`,`ban`,`unban`,`bans`,`serverinfo`,`membercount`\n `happybday`,`slap`,`joinus`,`burned`', value ='use for command',inline = False)
     await client.send_message(author,embed=embed)
-    await client.say('**DM sent containing Help**')
+    await client.say('**DM sent containing Help :white_check_mark: **')
 @client.command(pass_context = True)
 async def help3(ctx):
     author = ctx.message.author
