@@ -1006,9 +1006,9 @@ async def help2(ctx):
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Titan bot commands')
-    embed.add_field(name = '`access`,`setpartner`,`partner`,`addrole`,`delrole`\n `setnick`,`purge`,`ban`,`unban`,`bans`,`serverinfo`,`membercount`\n `happybday`,`slap`,`joinus`,`burned`', value ='acces a member',inline = False)
+    embed.add_field(name = '`access`,`setpartner`,`partner`,`addrole`,`delrole`\n `setnick`,`purge`,`ban`,`unban`,`bans`,`serverinfo`,`membercount`\n `happybday`,`slap`,`joinus`,`burned`', value ='use for command',inline = False)
     await client.send_message(author,embed=embed)
-    await client.say('📨 Check DMs For Information and t!help3 for more commands help')
+    await client.say('**DM sent containing Help**')
 @client.command(pass_context = True)
 async def help3(ctx):
     author = ctx.message.author
