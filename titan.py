@@ -973,9 +973,9 @@ async def help(ctx):
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Help')
     embed.set_image(url = 'https://media.giphy.com/media/k9I0BjPWKk96E/giphy.gif')
-    embed.add_field(name = '`t!ping` ,`t!jointest`,`t!servers`,`t!lock`,`t!unlock`,`t!dm`,`t!setw`,`t!setuplog`\n`t!userrole`,`t!userinfo`,`t!roleinfo`,`t!rolecolor`\n`t!role`,`t!warn`,`t!invites`,`t!virus`,`t!tweet`,`t!announce`,`t!addchannel`\n`t!delchannel`,`t!mute`,`t!unmute`,`t!meme`,`t!avatar`,`t!flipcoin`', value =' `page 1 commands',inline = False)
+    embed.add_field(name = '`t!ping` ,`t!jointest`,`t!servers`,`t!lock`,`t!unlock`,`t!dm`,`t!setw`,`t!setuplog`\n`t!userrole`,`t!userinfo`,`t!roleinfo`,`t!rolecolor`\n`t!role`,`t!warn`,`t!invites`,`t!virus`,`t!tweet`,`t!announce`,`t!addchannel`\n`t!delchannel`,`t!mute`,`t!unmute`,`t!meme`,`t!avatar`,`t!flipcoin`', value =' `page 1 commands [try t!help2]',inline = False)
     await client.send_message(author,embed=embed)
-    await client.say('📨 Check DMs For Information and do `t!help2` for other commands help')
+    await client.say('**DM sent containing Help :white_check_mark: **')
 @client.command(pass_context = True)
 async def help2(ctx):
     author = ctx.message.author
