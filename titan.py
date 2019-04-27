@@ -816,7 +816,7 @@ async def kick(ctx,user:discord.Member):
       await client.say(user.name+' was kicked. Good bye '+user.name+'!')
       await client.delete_message(ctx.message)
       for channel in user.server.channels:
-        if channel.name == '╰☆☆-multiverse-log-☆☆╮':
+        if channel.name == '-multiverse-log-':
             embed=discord.Embed(title="User kicked!", description="**{0}** is kicked by **{1}**!".format(user, ctx.message.author), color=0xFDE112)
             await client.send_message(channel, embed=embed)
 
@@ -960,7 +960,7 @@ async def remind(ctx, time=None, *,remind=None):
 async def ownerinfo(ctx):
     embed = discord.Embed(title="Information about owner", description="Bot code Editor: Mr. ๖ۣۜζ͜͡Kumar#0843 ", color=0x00ff00)
     embed.set_author(name=" Bot Owner ""Mr. ๖ۣۜζ͜͡Kumar#0843 ")
-    embed.add_field(name="Coder: BlueBird ❄ Froakie collector#0440", value="He coded the bot")
+    embed.add_field(name="Mr.Kumar",value="He coded the bot")
     await client.say(embed=embed)
 
       
