@@ -21,7 +21,7 @@ GIPHY_API_KEY = "dc6zaTOxFJmzC"
 
 async def status_task():
     while True:
-        await client.change_presence(game=discord.Game(name='for t!help1', type=2))
+        await client.change_presence(game=discord.Game(name='for t!help', type=2))
         await asyncio.sleep(6)
         await client.change_presence(game=discord.Game(name=str(len(set(client.get_all_members())))+' users', type=3))
         await asyncio.sleep(6)
@@ -35,7 +35,7 @@ async def on_ready():
      print('Logged in as '+client.user.name+' (ID:'+client.user.id+') | Connected to '+str(len(client.servers))+' servers | Connected to '+str(len(set(client.get_all_members())))+' users')
      print('the bot is ready')
      print('.......')
-     print('created by Mr.Kumar')
+     print('created by Rahul')
      client.loop.create_task(status_task())
 
 def is_owner(ctx):
@@ -47,7 +47,7 @@ def is_owner(ctx):
 async def on_member_join(member):
     role = discord.utils.get(member.server.roles, name='member')
     await client.add_roles(member, role)
-    print("In our server" + member.name + " just joined")
+    print("welcome" + member.name + " in our server ")
     r, g, b = tuple(int(x * 255) for x in colorsys.hsv_to_rgb(random.random(), 1, 1))
     embed = discord.Embed(color = discord.Color((r << 16) + (g << 8) + b))
     embed.set_author(name='Welcome user')
@@ -57,7 +57,7 @@ async def on_member_join(member):
     for channel in member.server.channels:
         if channel.name == 'welcome':
             embed = discord.Embed(title=f'Welcome {member.name} to {member.server.name}', description='plz check server rules and get them into your mind to follow them.', color = 0x36393E)
-            embed.add_field(name='__Thanks for joining__', value='**Be avtive and chat for rank up.**', inline=True)
+            embed.add_field(name='__Thanks for joining__', value='**Be active and chat for rank up.**', inline=True)
             embed.set_thumbnail(url='https://media.giphy.com/media/8PyTvI5EOu9LbAm8uS/giphy.gif')
             embed.add_field(name='__Join position__', value='{}'.format(str(member.server.member_count)), inline=True)
             embed.add_field(name='Time of joining', value=member.joined_at)
