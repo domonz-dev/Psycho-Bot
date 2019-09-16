@@ -146,11 +146,10 @@ async def dm(ctx, user: discord.Member, *, msg: str):
    if ctx.message.author.server_permissions.kick_members == False:
        await client.say('**You do not have permission to use this command**')
        return
-   elif user == "@everyone":
-        for server_member in ctx.message.server.members:
-            await client.send_message(user, msg)
-            await client.delete_message(ctx.message)
-            await client.say("Success! Your DM has made it! :white_check_mark: ")
+   else:
+       await client.send_message(user, msg)
+       await client.delete_message(ctx.message)
+       await client.say("Success! Your DM has made it! :white_check_mark: ")
 
 @client.command(pass_context = True)
 async def setw(ctx):
